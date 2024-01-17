@@ -2,10 +2,10 @@ const { spawn } = require('node:child_process');
 const fs = require("fs");
 const path = require("path");
 
-function getImgsPerSeconds(file = 'video.webm',numberOfFrames = '1/1',output = 'img.png'){
+function getImgsPerSeconds(file,numberOfFrames = '1/1',id, output = 'i.png'){
     return new Promise((res,rej)=>{   
         try{
-            let directory = 'tmpData';
+            let directory = 'tmpData/'+id;
             fs.readdir(directory, (err, files) => {
                 if (err) throw err;
                 for (const file of files) {
